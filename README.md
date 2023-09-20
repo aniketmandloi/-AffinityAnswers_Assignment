@@ -23,3 +23,42 @@ Follow these steps to run the PIN code validation script:
 4. Run the script by executing the following command:
 
        python Q1_Validate.py
+
+# SQL Database Interaction
+
+This repository contains my solution to the SQL database interaction task, which involves querying the RFAM SQL database to retrieve specific information related to tigers, database connections, rice types, and family pagination.
+
+## Overview
+
+In this task, we interacted with the RFAM SQL database to perform various SQL queries. These queries were designed to answer specific questions related to tigers, database connections, rice types, and family pagination.
+
+## SQL Queries
+
+The SQL queries for this task are provided in the `SQL_queries.txt` file. Each query corresponds to a specific question and retrieves the required information from the RFAM SQL database.
+
+## How to Run
+
+To execute the SQL queries and obtain the desired information, follow these steps:
+
+1. Access the RFAM SQL database using your preferred database management tool. You can run this command on your terminal to interact with Database.
+
+       mysql --user rfamro --host mysql-rfam-public.ebi.ac.uk --port 4497 --database Rfam
+
+3. Open the `Q3_Queries.txt` file.
+
+4. Copy and paste each query into the SQL query editor of your database management tool or Command Line.
+
+5. Execute each query to retrieve the results.
+
+## Query Descriptions
+
+Here's a brief description of each SQL query in `Q3_Queries.txt`:
+
+- **Query 1:** Find the number of types of tigers in the taxonomy table and the ncbi_id of the Sumatran Tiger.
+
+- **Query 2:** Identify the columns that can be used to connect the tables in the database.
+
+- **Query 3:** Determine the type of rice with the longest DNA sequence.
+
+- **Query 4:** Retrieve a paginated list of family names and their longest DNA sequence lengths in descending order of length, where only families with DNA sequence lengths greater than 1,000,000 are included. The query returns the 9th page with 15 results per page.
+
