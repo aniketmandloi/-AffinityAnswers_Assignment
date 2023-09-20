@@ -62,3 +62,21 @@ Here's a brief description of each SQL query in `Q3_Queries.txt`:
 
 - **Query 4:** Retrieve a paginated list of family names and their longest DNA sequence lengths in descending order of length, where only families with DNA sequence lengths greater than 1,000,000 are included. The query returns the 9th page with 15 results per page.
 
+
+# AMFI Data Extraction Script
+
+This shell script is designed to fetch data from a specific URL and extract the Scheme Name and Asset Value fields. The extracted data is then saved in a TSV (Tab-Separated Values) file for further analysis or use.
+
+## Usage
+
+1. Ensure you have a Unix-like environment (e.g., Linux or macOS) with `bash` and `curl` installed.
+
+2. Download the `Q3_bashScript.sh` script to your local machine.
+
+3. Make the script executable:
+  
+          chmod +x amfi_data_extraction.sh
+4. Run the Script
+
+       ./Q3_bashScript.sh
+
