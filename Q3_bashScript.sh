@@ -1,11 +1,19 @@
-# Fetch data from the URL and save it to a file
-curl -s "http://www.amfiindia.com/spages/NAVAll.txt" > amfi_data.txt
+#!/bin/bash
 
-# Extract Scheme Name and Asset Value fields and save in a TSV file
-awk -F ';' '{print $4 "\t" $5}' amfi_data.txt > amfi_data.tsv
+# the url is set for the curl functin in a variable.
+URL="http://www.amfiindia.com/spages/NAVAll.txt"
 
-# Clean up by removing the intermediate text file
-rm amfi_data.txt
+# Defining the tsv file which we will use to copy or store our data from the url.
+OUTPUT_FILE="data.tsv"
 
-# Provide a message indicating the completion of the task
-echo "Data extraction and conversion to TSV completed."
+# Used curl to fetch the data and storing that in a variable.
+data=$(curl -s "$URL")
+
+# extracting Scheme name and asset values using cut with delimeter -d to split the data where ; is in between then selecting fields 3 and 5.
+extracted_data=$(echo "$data" | cut -d ';' -f 3,5)
+
+# Replacing semicolons with tabs spaces using tr and storing those in a variable.
+formatted_data=$(echo "$extracted_data" | tr ';' '\t')
+
+# last step is saving the fotmatted data to the .tsv file we declared above.
+echo "$formatted_data" > "$OUTPUT_FILE"
