@@ -73,11 +73,7 @@ This shell script is designed to fetch data from a specific URL and extract the 
 
 2. Download the `Q3_bashScript.sh` script to your local machine.
 
-3. Make the script executable:
-  
-       chmod +x amfi_data_extraction.sh
-
-4. Run the Script
+3. Run the Script
 
        ./Q3_bashScript.sh
 
